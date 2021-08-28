@@ -29,16 +29,7 @@ async function connect(host, port, username, password, database) {
 
     models.Bandas.hasMany(models.Canciones);
     models.Canciones.belongsTo(models.Bandas);
-/*
-    models.User.hasMany(models.Song);
-    models.Song.belongsToMany(models.User, { through: 'likedSongs'});
 
-    models.User.hasMany(models.Albumes);
-    models.Albumes.belongsToMany(models.User, { through: 'likedAlbums'});
-
-    models.User.hasMany(models.Band);
-    models.Band.belongsToMany(models.User, { through: 'likedBands'});
-*/
     try {
         await sequelize.authenticate();
         await sequelize.sync();
